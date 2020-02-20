@@ -1,0 +1,7 @@
+{
+  "name": "scan-and-print-test",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
