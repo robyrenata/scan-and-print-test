@@ -1,20 +1,32 @@
-<ion-header [translucent]="true">
+<ion-header>
   <ion-toolbar>
     <ion-title>
-      Blank
+      Scan and Print
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content>
+  <ion-row class="ion-align-items-center ion-justify-content-center">
+    <ion-col
+      class="ion-align-items-center ion-justify-content-center ion-text-center"
+    >
+      <ion-input
+        style="color: blue"
+        type="text"
+        [(ngModel)]="scanResult"
+        (keypress)="inputChange($event)"
+        #inputRef
+        maxlength="13"
+      ></ion-input>
+    </ion-col>
+  </ion-row>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+  <ion-row class="ion-text-center">
+    <ion-col>
+      <ion-button (click)="allInOnePrinting(scanResult)">
+        MANUAL PRINT
+      </ion-button>
+    </ion-col>
+  </ion-row>
 </ion-content>
