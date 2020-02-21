@@ -17,7 +17,6 @@
         [(ngModel)]="scanResult"
         (keypress)="inputChange($event)"
         #inputRef
-        maxlength="13"
       ></ion-input>
     </ion-col>
   </ion-row>
@@ -40,6 +39,16 @@
     </ion-col>
     <ion-col>
       <ion-button (click)="print()">PRINT</ion-button>
+    </ion-col>
+    <ion-col>
+      <ion-button (click)="printQr()">PRINT QR</ion-button>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col>
+      <ion-button (click)="status()">
+        STATUS
+      </ion-button>
     </ion-col>
   </ion-row>
 </ion-content>

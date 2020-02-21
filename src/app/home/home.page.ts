@@ -90,9 +90,44 @@ export class HomePage implements AfterViewInit {
   }
 
   print() {
+    console.log("text print?", this.scanResult);
+    this.showToast("Print => " + this.scanResult.toString());
     FujitsuThermalPrinter.PrintText({
       code: this.scanResult.toString()
-    }).then(res => this.showToast(res.message));
+    }).then(res => {
+      this.showToast(res.message);
+      this.feedPaper();
+      this.cutPaper();
+    });
+  }
+
+  printQr() {
+    console.log("print qr?");
+    this.showToast("printing qr");
+
+    FujitsuThermalPrinter.PrintQR({ code: "bambanguhuy" }).then(res => {
+      this.showToast(res.message);
+    });
+
+    this.feedPaper();
+    this.cutPaper();
+  }
+
+  feedPaper() {
+    console.log("feeding paper");
+    this.showToast("feeding paper");
+  }
+
+  cutPaper() {
+    console.log("cutting paper");
+    this.showToast("cutting paper");
+  }
+
+  status() {
+    FujitsuThermalPrinter.GetPrinterStatus().then(res => {
+      this.showToast(res.message);
+      this.showToast(res);
+    });
   }
 
   async showToast(message: string) {
