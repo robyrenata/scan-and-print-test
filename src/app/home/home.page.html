@@ -6,7 +6,12 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content class="ion-no-padding ion-no-margin">
+  <ion-row>
+    <ion-col size="12">
+      {{responseDebug}}
+    </ion-col>
+  </ion-row>
   <ion-row class="ion-align-items-center ion-justify-content-center">
     <ion-col
       class="ion-align-items-center ion-justify-content-center ion-text-center"
@@ -43,12 +48,143 @@
     <ion-col>
       <ion-button (click)="printQr()">PRINT QR</ion-button>
     </ion-col>
+    <ion-col>
+      <ion-button (click)="printImageDOM()">
+        PRINT IMAGE DOM
+      </ion-button>
+    </ion-col>
   </ion-row>
   <ion-row>
     <ion-col>
       <ion-button (click)="status()">
         STATUS
       </ion-button>
+    </ion-col>
+  </ion-row>
+
+  <ion-row class="ion-no-padding ion-no-margin">
+    <ion-col size="12" class="ion-no-padding ion-no-margin">
+      <!-- <app-ticket-template #tpl></app-ticket-template> -->
+      <table
+        id="itLayout"
+        cellpadding="0"
+        cellspacing="0"
+        style="background: white;"
+        #tpl
+      >
+        <tr>
+          <td class="itLeft">
+            <div class="itLogo">
+              <img
+                style="width: 50%;"
+                src="data:image/png;base64,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"
+                alt="logo"
+              />
+            </div>
+            <!-- <div class="itGoshow"><span>GO&nbsp;SHOW</span></div> -->
+            <div class="itBoardingPass"><span>BOARDING&nbsp;PASS</span></div>
+            <div class="itBookingCode">
+              <span
+                >kode booking / <i>booking code</i><br /><i
+                  class="itBookingCodeNumber"
+                  >B293HWP</i
+                ></span
+              >
+            </div>
+            <br />
+            <br />
+            <br />
+          </td>
+          <td>
+            ​
+            <!-- passenger info -->
+            <table id="itContent" cellpadding="0" cellspacing="0">
+              <tr>
+                <td class="itLeft" colspan="2">
+                  nama <span>/ name</span>
+                  <br />
+                  <div class="itFullname">TEST 123</div>
+                </td>
+              </tr>
+              <tr>
+                <td class="itLeft">
+                  nomor identitas <span>/ id number</span>
+                  <br />
+                  <div class="itText">849XXX</div>
+                </td>
+                <td>
+                  tipe penumpang <span>/ pax type</span>
+                  <br />
+                  <div class="itText">ADULT</div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  kereta api <span>/ train</span>
+                  <br />
+                  <div class="itText">DEDETTRAIN / 90</div>
+                </td>
+                <td>
+                  no tempat duduk <span>/ seat number</span>
+                  <br />
+
+                  <div class="itText">
+                    EKS / 7A
+                  </div>
+                </td>
+              </tr>
+              <tr></tr>
+              <tr>
+                <td>
+                  berangkat <span>/ departure</span>
+                  <br />
+                  <div class="itText">
+                    BANDUNG( BD )
+                    <br />
+                    17:00 WIB
+                  </div>
+                </td>
+                <td>
+                  perkiraan tiba <span>/ eta</span>
+                  <br />
+                  <div class="itText">
+                    GAMBIR ( GMR )
+                    <br />
+                    20:00 WIB
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td class="itTextCheckin">
+                  check in at BD 2020-02-14 16:40:00
+                </td>
+              </tr>
+            </table>
+
+            ​
+          </td>
+
+          <td class="itRight">
+            <div class="itBarcodeCanvas">
+              <span
+                >B293HWP
+                <div id="itBarcodeCanvas">
+                  <div id="barcode-image">
+                    BARCODE!
+                  </div>
+                </div>
+              </span>
+            </div>
+          </td>
+          ​
+          <td>
+            <br />
+            .
+          </td>
+
+          ​
+        </tr>
+      </table>
     </ion-col>
   </ion-row>
 </ion-content>
