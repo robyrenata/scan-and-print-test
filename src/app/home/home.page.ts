@@ -21,7 +21,7 @@ export class HomePage implements AfterViewInit {
 		console.log('el ref input scan', this.scanInput);
 		// if ((this.scanInput.nativeElement.value.length = 13)) {
 		// }
-		console.log('template ref', this.tpl['nativeElement']);
+		// console.log('template ref', this.tpl['nativeElement']);
 	}
 
 	ionViewDidEnter() {
@@ -224,4 +224,16 @@ export class HomePage implements AfterViewInit {
 			this.showToast(res.message);
 		});
 	}
+
+	previewImage:any
+	preview(){
+		const self = this
+		domtoimage
+		.toPng(document.getElementById('itLayout'))
+		.then(function(dataUrl) {
+			self.previewImage = dataUrl
+		})
+		.catch(function(error) {
+			console.error('oops, something went wrong!', error);
+		});	}
 }

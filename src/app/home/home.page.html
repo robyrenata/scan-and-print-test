@@ -13,16 +13,8 @@
     </ion-col>
   </ion-row>
   <ion-row class="ion-align-items-center ion-justify-content-center">
-    <ion-col
-      class="ion-align-items-center ion-justify-content-center ion-text-center"
-    >
-      <ion-input
-        style="color: blue"
-        type="text"
-        [(ngModel)]="scanResult"
-        (keypress)="inputChange($event)"
-        #inputRef
-      ></ion-input>
+    <ion-col class="ion-align-items-center ion-justify-content-center ion-text-center">
+      <ion-input style="color: blue" type="text" [(ngModel)]="scanResult" (keypress)="inputChange($event)" #inputRef></ion-input>
     </ion-col>
   </ion-row>
 
@@ -60,16 +52,20 @@
         STATUS
       </ion-button>
     </ion-col>
+    <ion-col>
+        <ion-button (click)="preview()">
+            preview
+        </ion-button>
+      </ion-col>
   </ion-row>
 
-  <ion-row class="ion-no-padding ion-no-margin">
-    <ion-col size="12" class="ion-no-padding ion-no-margin">
-      <!-- <app-ticket-template #tpl></app-ticket-template> -->
+  <!-- <ion-row class="ion-no-padding ion-no-margin">
+    <ion-col size="12" class="ion-no-padding ion-no-margin" style="padding-right: 300px;">
       <table
         id="itLayout"
         cellpadding="0"
         cellspacing="0"
-        style="background: white;width: 350px;font-size: 28px"
+        style="background: white;font-size: 28px"
         #tpl
       >
         <tr>
@@ -81,7 +77,6 @@
                 alt="logo"
               />
             </div>
-            <!-- <div class="itGoshow"><span>GO&nbsp;SHOW</span></div> -->
             <div class="itBoardingPass"><span>BOARDING&nbsp;PASS</span></div>
             <div class="itBookingCode">
               <span
@@ -98,45 +93,42 @@
         </tr>
         <tr style="transform:rotate(90deg)">
           <td>
-            <!-- passenger info -->
             <table
               id="itContent"
               cellpadding="0"
               cellspacing="0"
-              style="width: 500px;"
             >
               <tr>
                 <td class="itLeft" colspan="2">
                   nama <span>/ name</span>
                   <br />
-                  <div class="itFullname">TEST 123</div>
+                  <div style="font-size: 30px"><b>TEST 123</b></div>
                 </td>
               </tr>
               <tr>
                 <td class="itLeft">
                   nomor identitas <span>/ id number</span>
                   <br />
-                  <div class="itText">849XXX</div>
+                  <div style="font-size: 30px"><b><i>36xxx</i></b></div>
                 </td>
                 <td>
                   tipe penumpang <span>/ pax type</span>
                   <br />
-                  <div class="itText">ADULT</div>
+                  <div style="font-size: 30px"><b><i>ADULT</i></b></div>
                 </td>
               </tr>
               <tr>
                 <td>
                   kereta api <span>/ train</span>
                   <br />
-                  <div class="itText">DEDETTRAIN / 90</div>
+                  <div style="font-size: 30px"><b><i>ARGO PARAHYANGAN EXELLENCE / 1</i></b></div>
                 </td>
                 <td>
                   no tempat duduk <span>/ seat number</span>
                   <br />
 
-                  <div class="itText">
-                    EKS / 7A
-                  </div>
+				  <div style="font-size: 30px"><b><i>EKS-1 / 7D</i></b></div>
+
                 </td>
               </tr>
               <tr></tr>
@@ -144,20 +136,14 @@
                 <td>
                   berangkat <span>/ departure</span>
                   <br />
-                  <div class="itText">
-                    BANDUNG( BD )
-                    <br />
-                    17:00 WIB
-                  </div>
+				  <div style="font-size: 30px"><b><i>GAMBIR(GMR)<br>SENIN, 09 MAR 20 : 13:50 WIB</i></b></div>
+
                 </td>
                 <td>
                   perkiraan tiba <span>/ eta</span>
                   <br />
-                  <div class="itText">
-                    GAMBIR ( GMR )
-                    <br />
-                    20:00 WIB
-                  </div>
+				  <div style="font-size: 30px"><b><i>SURABAYA PASARTURI(SBI)<br>SENIN, 10 MAR 20 : 01:00 WITA</i></b></div>
+
                 </td>
               </tr>
               <tr>
@@ -196,5 +182,138 @@
         </tr>
       </table>
     </ion-col>
+  </ion-row> -->
+
+  <div style="width: 600px;background-color: white;padding-left: 20px;" id="itLayout">
+    <ion-row style="height: 192px;padding-left: 82px;">
+      <ion-col class="ion-text-center ">
+        <ion-row>
+          <ion-col style="font-size: 23px;">
+            kode booking / booking code
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col style="font-size: 70px;">
+            <b>ABCDEFG</b>
+          </ion-col>
+        </ion-row>
+      </ion-col>
+      <ion-col size="4" class="ion-text-left ion-align-self-center" >
+        <img
+          src="assets/kai.png"
+          alt="logo"
+          width="65"
+          
+          
+
+        />
+      </ion-col>
+    </ion-row>
+    <ion-row style="transform: rotate(90deg); padding-left: 50px;" >
+      <ion-col>
+        <ion-row>
+          <ion-col>
+            <ion-row>
+              <ion-col style="font-size: 23px;">
+                nama / name
+              </ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col style="font-size: 34px;">
+                <b>VICTOR</b>
+              </ion-col>
+            </ion-row>
+          </ion-col>
+        </ion-row>
+
+        <ion-row style="width: 950px;">
+          <ion-col style="width: 400px;">
+            <ion-row>
+              <ion-col style="font-size: 23px;">
+                nomor identitas / id number
+              </ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col style="font-size: 30px;">
+                <b><i>36XXX</i></b>
+              </ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col style="font-size: 23px;">
+                kereta api / train
+              </ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col style="font-size: 30px;">
+                <b><i>ARGO WILIS / 1</i></b>
+              </ion-col>
+            </ion-row>
+
+            <ion-row>
+              <ion-col style="font-size: 23px;">
+                berangkat / departure
+              </ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col style="font-size: 30px;">
+                <b
+                  ><i>BANDUNG(BD)<br />SENIN, 09 MAR 20; 13:50 WIB</i></b
+                >
+              </ion-col>
+            </ion-row>
+          </ion-col>
+
+          <!-- <ion-col size="1"> </ion-col> -->
+
+          <ion-col>
+            <ion-row>
+              <ion-col style="font-size: 23px;">
+                tipe penumpang / pax type
+              </ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col style="font-size: 30px;">
+                <b><i>DEWASA</i></b>
+              </ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col style="font-size: 23px;">
+                no tempat duduk / seat number
+              </ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col style="font-size: 30px;">
+                <b><i>LUX-1; 2B</i></b>
+              </ion-col>
+            </ion-row>
+
+            <ion-row>
+              <ion-col style="font-size: 23px;">
+                perkiraan tiba / eta
+              </ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col style="font-size: 30px;">
+                <b
+                  ><i>SURABAYA PASARTURI(SBI)<br />SELASA, 10 MAR 20; 00:50 WITA</i></b
+                >
+              </ion-col>
+            </ion-row>
+          </ion-col>
+        </ion-row>
+      </ion-col>
+    </ion-row>
+    <ion-row style="padding-top: 550px;">
+      <ion-col>
+        [nomor tiket]
+        <pdf417barcode [text]="'TYTYDSKUY'" [opts]="{ pxw: 5, pxh: 5}"></pdf417barcode>
+      </ion-col>
+    </ion-row>
+  </div>
+
+  <ion-row class="ion-text-center">
+      <ion-col>
+          <img [src]="previewImage">
+      </ion-col>
   </ion-row>
 </ion-content>
