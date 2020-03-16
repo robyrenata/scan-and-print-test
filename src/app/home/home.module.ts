@@ -6,6 +6,7 @@ import { RouterModule } from "@angular/router";
 
 import { HomePage } from "./home.page";
 import { TicketTemplateModule } from "../shared/common/ticket-template/ticket-template.module";
+import { Pdf417BarcodeModule } from "pdf417-barcode";
 
 @NgModule({
   imports: [
@@ -18,7 +19,8 @@ import { TicketTemplateModule } from "../shared/common/ticket-template/ticket-te
         component: HomePage
       }
     ]),
-    TicketTemplateModule
+    TicketTemplateModule,
+    Pdf417BarcodeModule
   ],
   declarations: [HomePage]
 })

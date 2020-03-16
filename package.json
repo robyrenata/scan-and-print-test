@@ -28,6 +28,7 @@
     "core-js": "^2.5.4",
     "dom-to-image-improved": "^2.8.0",
     "fujitsu-thermalprinter-plugin": "git+https://github.com/robyrenata/fujitsu-thermalprinter-plugin.git",
+    "pdf417-barcode": "^0.4.1",
     "rxjs": "~6.5.1",
     "tslib": "^1.9.0",
     "zone.js": "~0.9.1"
