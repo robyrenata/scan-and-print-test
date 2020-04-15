@@ -42,8 +42,9 @@ export class HomePage implements AfterViewInit {
 			this.allInOnePrinting(this.scanResult);
 		}
 	}
-
+show = false
 	allInOnePrinting(textToBePrinted: string) {
+this.show = true
 		FujitsuThermalPrinter.GetUsbDevice().then(
 			(res) => {
 				console.log('res permission', res);
@@ -191,7 +192,7 @@ export class HomePage implements AfterViewInit {
 				FujitsuThermalPrinter.PrintImageBmp({
 					base64: dataUrl,
 					cutPaper: 0,
-					paperFeed: 64,
+					paperFeed: 400,
 				}).then((res) => {
 					this.showToast(res.message);
 					this.responseDebug = res.message;
@@ -224,7 +225,10 @@ export class HomePage implements AfterViewInit {
 			this.showToast(res.message);
 		});
 	}
-
+asd = 
+{
+	aa:"asd"
+}
 	previewImage:any
 	preview(){
 		const self = this
