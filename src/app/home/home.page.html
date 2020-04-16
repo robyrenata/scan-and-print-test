@@ -287,7 +287,7 @@
   </div> -->
 
   <!-- Bukti Batal Tiket -->
-  <div style="width: 600px; background-color: white; padding-left: 20px; height: 1660px;" id="itLayout">
+  <!-- <div style="width: 600px; background-color: white; padding-left: 20px; " id="itLayout">
     <ion-row style="height: 130px; padding-left: 82px;">
       <ion-col class="ion-text-center">
         <ion-row>
@@ -427,7 +427,7 @@
           </ion-row>
           <ion-row>
             <ion-col>
-              <!-- <pdf417barcode [text]="'aasd'" [opts]="{ pxw: 3, pxh: 3}"></pdf417barcode> -->
+              <pdf417barcode [text]="'aasd'" [opts]="{ pxw: 3, pxh: 3}"></pdf417barcode>
             </ion-col>
           </ion-row>
 
@@ -537,6 +537,152 @@
             </ion-col>
             <ion-col style="font-size: 23px;">
               EKS-5 / 17A
+            </ion-col>
+          </ion-row>
+        </ion-col>
+      </ion-row>
+    </div>
+  </div> -->
+
+  <!-- Tanda Bukti Tiket (Ubah Jadwal) -->
+  <div style="width: 600px; background-color: white; padding-left: 20px; height: 1010px;" id="itLayout">
+    <div style="transform: rotate(90deg); padding-left: 20px;">
+      <ion-row style="width: 990px;">
+        <ion-col>
+          <ion-row class="ion-align-items-center">
+            <ion-col size="2">
+              <img src="assets/kai2.png" alt="logo" width="145" />
+            </ion-col>
+            <ion-col style="font-size: 34px;">
+              <b>TANDA BUKTI TIKET</b>
+            </ion-col>
+            <ion-col class="ion-text-right">
+              <pdf417barcode [text]="'aasd'" [opts]="{ pxw: 3, pxh: 3}"></pdf417barcode>
+              [nomor tiket]
+            </ion-col>
+          </ion-row>
+
+          <ion-row>
+            <ion-col>
+              <ion-row>
+                <ion-col style="font-size: 23px;">
+                  nama / name
+                </ion-col>
+              </ion-row>
+              <ion-row>
+                <ion-col style="font-size: 30px;">
+                  <b>ROBY IBRAHIM RENATA</b>
+                </ion-col>
+              </ion-row>
+            </ion-col>
+            <ion-col size="4">
+              <ion-row>
+                <ion-col style="font-size: 23px;">
+                  kode booking / booking code
+                </ion-col>
+              </ion-row>
+              <ion-row>
+                <ion-col style="font-size: 30px;">
+                  <b>ABCDEFG</b>
+                </ion-col>
+              </ion-row>
+            </ion-col>
+          </ion-row>
+
+          <ion-row style="width: 990px;">
+            <ion-col>
+              <ion-row>
+                <ion-col style="font-size: 23px;">
+                  nomor identitas / id number
+                </ion-col>
+              </ion-row>
+              <ion-row>
+                <ion-col style="font-size: 30px;">
+                  <b><i>36XXX</i></b>
+                </ion-col>
+              </ion-row>
+              <ion-row>
+                <ion-col style="font-size: 23px;">
+                  kereta api / train
+                </ion-col>
+              </ion-row>
+              <ion-row>
+                <ion-col style="font-size: 30px;">
+                  <b><i>ARGO WILIS / 1</i></b>
+                </ion-col>
+              </ion-row>
+
+              <ion-row>
+                <ion-col style="font-size: 23px;">
+                  berangkat / departure
+                </ion-col>
+              </ion-row>
+              <ion-row>
+                <ion-col style="font-size: 30px;">
+                  <b
+                    ><i>BANDUNG(BD)<br />SENIN, 09 MAR 20; 13:50</i></b
+                  >
+                </ion-col>
+              </ion-row>
+            </ion-col>
+
+            <ion-col>
+              <ion-row>
+                <ion-col style="font-size: 23px;">
+                  tipe penumpang / pax type
+                </ion-col>
+              </ion-row>
+              <ion-row>
+                <ion-col style="font-size: 30px;">
+                  <b><i>DEWASA</i></b>
+                </ion-col>
+              </ion-row>
+              <ion-row>
+                <ion-col style="font-size: 23px;">
+                  no tempat duduk / seat number
+                </ion-col>
+              </ion-row>
+              <ion-row>
+                <ion-col style="font-size: 30px;">
+                  <b><i>LUX-1; 2B</i></b>
+                </ion-col>
+              </ion-row>
+
+              <ion-row>
+                <ion-col style="font-size: 23px;">
+                  tiba / arrival
+                </ion-col>
+              </ion-row>
+              <ion-row>
+                <ion-col style="font-size: 30px;">
+                  <b
+                    ><i>SURABAYA PASARTURI(SBI)<br />SELASA, 10 MAR 20; 00:50</i></b
+                  >
+                </ion-col>
+              </ion-row>
+            </ion-col>
+
+            <ion-col size="5/2">
+              <ion-row>
+                <ion-col style="font-size: 23px;">
+                  tarif / price
+                </ion-col>
+              </ion-row>
+              <ion-row>
+                <ion-col style="font-size: 30px;">
+                  <b>Rp 9.100.000</b>
+                </ion-col>
+              </ion-row>
+              <ion-row>
+                <ion-col style="font-size: 23px;">
+                  total
+                </ion-col>
+              </ion-row>
+              <ion-row>
+                <ion-col style="font-size: 30px;">
+                  <b>Rp 9.100.000</b>
+                </ion-col>
+              </ion-row>
             </ion-col>
           </ion-row>
         </ion-col>
